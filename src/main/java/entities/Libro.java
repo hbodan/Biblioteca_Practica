@@ -27,4 +27,15 @@ public class Libro {
     @ManyToMany
     @JoinTable(name = "libro_categoria", joinColumns = @JoinColumn(name = "libro_id"), inverseJoinColumns = @JoinColumn(name = "categoria_id"))
     private List<Categoria> categorias;
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", anioPublicacion='" + anioPublicacion + '\'' +
+                ", autor=" + autor +
+                ", categorias=" + categorias +
+                '}';
+    }
 }
