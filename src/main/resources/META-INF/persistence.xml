@@ -6,6 +6,10 @@
     <persistence-unit name="uam" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+        <class>entities.Autor</class>
+        <class>entities.Categoria</class>
+        <class>entities.Libro</class>
+
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
