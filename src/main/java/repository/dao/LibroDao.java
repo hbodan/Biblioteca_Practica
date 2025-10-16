@@ -49,7 +49,7 @@ public class LibroDao implements ILibro {
             em.getTransaction().begin();
             Libro eliminado = em.find(Libro.class, libro.getId());
 
-            if (eliminado.getId() == null){
+            if (eliminado == null){
                 em.getTransaction().commit();
                 return false;
             }
@@ -77,7 +77,7 @@ public class LibroDao implements ILibro {
 
             Libro actualizado = em.find(Libro.class, libro.getId());
 
-            if (actualizado.getId() == null){
+            if (actualizado == null){
                 em.getTransaction().commit();
                 return null;
             }

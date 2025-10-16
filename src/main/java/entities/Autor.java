@@ -20,6 +20,7 @@ public class Autor {
     @Column(name = "nacionalidad", length = 100, nullable = false)
     private String nacionalidad;
 
+    @Temporal(TemporalType.DATE)
     @Column (name = "fecha_nacimiento",  nullable = false)
     private Date fechaNacimiento;
 

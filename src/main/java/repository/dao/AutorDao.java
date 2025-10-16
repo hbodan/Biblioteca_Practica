@@ -45,7 +45,7 @@ public class AutorDao implements IAutor {
             em.getTransaction().begin();
             Autor editado = em.find(Autor.class, autor.getId());
 
-            if (autor.getId() == null) {
+            if (editado == null) {
                 em.getTransaction().commit();
                 return null;
             }
@@ -72,7 +72,7 @@ public class AutorDao implements IAutor {
             em.getTransaction().begin();
             Autor eliminado = em.find(Autor.class, autor.getId());
 
-            if (autor.getId() == null) {
+            if (eliminado == null) {
                 em.getTransaction().commit();
                 return null;
             }

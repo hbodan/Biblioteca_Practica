@@ -31,9 +31,9 @@ public class CategoriaDao implements ICategoria {
             if(em.getTransaction().isActive()){
                 em.getTransaction().rollback();
             }
-
+            throw e;
         }
-        return null;
+
     }
 
     @Override
@@ -46,7 +46,7 @@ public class CategoriaDao implements ICategoria {
             em.getTransaction().begin();
             Categoria eliminado = em.find(Categoria.class, categoria.getId());
 
-            if(categoria.getId() == null){
+            if(eliminado == null){
                 em.getTransaction().commit();
                 return false;
             }
@@ -73,7 +73,7 @@ public class CategoriaDao implements ICategoria {
             em.getTransaction().begin();
             Categoria actualizado = em.find(Categoria.class, categoria.getId());
 
-            if(categoria.getId() == null){
+            if(actualizado == null){
                 em.getTransaction().commit();
                 return null;
             }
